@@ -6,9 +6,9 @@ def ac(n):
 	p=''
 	v=int(n)
 	while True:
-		p+=a[v%60]
-		print(str(v)+'  '+a[v%60])
-		v//=60
+		p+=a[v%len(a)]
+		print(str(v)+'  '+a[v%len(a)])
+		v//=len(a)
 		if(v<1):
 			break
 	
@@ -20,8 +20,8 @@ def ad(n):
 	for i in range(len(n)):
 		while (a[ct]!=n[i]):
 		 	ct+=1
-		h+=ct*(60**(len(n)-1-i))
-		print(n[i]+' = '+str(ct)+' × '+str(60**(len(n)-1-i)))
+		h+=ct*(len(a)**(len(n)-1-i))
+		print(n[i]+' = '+str(ct)+' × '+str(len(a)**(len(n)-1-i)))
 		ct=0
 		
 	return str(h)
